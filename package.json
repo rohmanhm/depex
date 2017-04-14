@@ -1,0 +1,23 @@
+{
+  "name": "depex",
+  "description": "CLI that helped expose dependencies",
+  "version": "0.0.1",
+  "bin": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Roman Masyhar",
+    "email": "mhrohman@live.com",
+    "url": "https://github.com/rohmanhm"
+  },
+  "repository": "rohmanhm/depex",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "console.table": "^0.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
