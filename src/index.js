@@ -4,12 +4,8 @@
 require('console.table') // eslint-disable-line import/no-unassigned-import
 const path = require('path')
 const program = require('commander')
-const pkgJSON = require('./package.json')
-
-const PKG_NAME = 'package.json'
-const PKG_PATH = './'
-const PKG = path.join(__dirname, PKG_PATH, PKG_NAME)
-const PKG_FILE = require(PKG)
+const pkgJSON = require('../package.json')
+const { parsePkg } = require('./utils')
 
 program
   .version(pkgJSON.version)
@@ -17,29 +13,23 @@ program
   .option('-D, --devdep', 'only expose devDependencies')
   .parse(process.argv)
 
-const serializePkg = json => {
-  return Object.keys(json).map(v => {
-    return {
-      name: v,
-      version: json[v]
-    }
-  })
-}
+const PKG_PATH = path.resolve(__dirname, '../package.json')
+const PKG_FILE = require(PKG_PATH)
 
 const sendExpose = (dep, devdep) => {
   if (dep) {
     console.log('------ DEPENDENCIES ------')
-    console.table(serializePkg(PKG_FILE.dependencies))
+    console.table(parsePkg(PKG_FILE.dependencies))
   }
 
   if (devdep) {
     console.log('------ DEV DEPENDENCIES ------')
-    console.table(serializePkg(PKG_FILE.devDependencies))
+    console.table(parsePkg(PKG_FILE.devDependencies))
   }
 }
 
 const { dep, devdep } = program
-// No option passed
+// If there is no option passed
 if (!dep && !devdep) {
   sendExpose(true, true)
 } else {

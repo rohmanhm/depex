@@ -2,7 +2,7 @@
   "name": "depex",
   "description": "CLI that helped expose dependencies",
   "version": "0.0.1",
-  "bin": "index.js",
+  "bin": "src/index.js",
   "license": "MIT",
   "author": {
     "name": "Roman Masyhar",
