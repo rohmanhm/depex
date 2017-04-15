@@ -1,4 +1,6 @@
-# Depex
+# 🌗 Depex
+ [![Build Status](https://travis-ci.org/rohmanhm/depex.svg?branch=master)](https://travis-ci.org/djavaweb/unobuilder)
+
 The simple way to expose your dependencies name and version from your `package.json` file and grouped by their type of dep.
 
 ## Install
