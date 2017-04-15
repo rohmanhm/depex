@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 'use strict'
 
-require('console.table')
-const program = require('commander')
+require('console.table') // eslint-disable-line import/no-unassigned-import
 const path = require('path')
+const program = require('commander')
 const pkgJSON = require('./package.json')
 
 const PKG_NAME = 'package.json'
@@ -39,5 +39,9 @@ const sendExpose = (dep, devdep) => {
 }
 
 const { dep, devdep } = program
-if (!dep && !devdep) return sendExpose(true, true)
-sendExpose(dep, devdep)
+// No option passed
+if (!dep && !devdep) {
+  sendExpose(true, true)
+} else {
+  sendExpose(dep, devdep)
+}
