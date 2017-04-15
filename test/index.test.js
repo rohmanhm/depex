@@ -3,11 +3,11 @@ import { join, resolve } from 'path'
 import test from 'ava'
 import S from 'string'
 import { shell, shellSync } from 'execa'
-import pkgJSON from './package.json' // eslint-disable-line import/extensions
+import pkgJSON from '../package.json' // eslint-disable-line import/extensions
 
 const depJSON = pkgJSON.dependencies
 const devDepJSON = pkgJSON.devDependencies
-const depex = join(__dirname, pkgJSON.bin)
+const depex = join(__dirname, '../', pkgJSON.bin)
 
 const checkDep = (str, dep) => {
   return Object.keys(dep).map(v => {
