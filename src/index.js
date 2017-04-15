@@ -13,7 +13,7 @@ program
   .option('-D, --devdep', 'only expose devDependencies')
   .parse(process.argv)
 
-const PKG_PATH = path.resolve(__dirname, '../package.json')
+const PKG_PATH = path.resolve(process.env.PWD, './package.json')
 const PKG_FILE = require(PKG_PATH)
 
 const sendExpose = (dep, devdep) => {
