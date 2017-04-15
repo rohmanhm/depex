@@ -19,12 +19,20 @@ const PKG_FILE = require(PKG_PATH)
 const sendExpose = (dep, devdep) => {
   if (dep) {
     console.log('------ DEPENDENCIES ------')
-    console.table(parsePkg(PKG_FILE.dependencies))
+    if ('dependencies' in PKG_FILE) {
+      console.table(parsePkg(PKG_FILE.dependencies))
+    } else {
+      console.info('No dependencies')
+    }
   }
 
   if (devdep) {
     console.log('------ DEV DEPENDENCIES ------')
-    console.table(parsePkg(PKG_FILE.devDependencies))
+    if ('devDependencies' in PKG_FILE) {
+      console.table(parsePkg(PKG_FILE.devDependencies))
+    } else {
+      console.info('No devDependencies')
+    }
   }
 }
 
