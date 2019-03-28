@@ -18,7 +18,7 @@
     "console.table": "^0.10.0"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^1.4.1",
     "eslint": "^5.0.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-node": "^7.0.0",
