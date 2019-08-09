@@ -14,7 +14,7 @@
     "test": "xo && ava"
   },
   "dependencies": {
-    "commander": "^2.9.0",
+    "commander": "^3.0.0",
     "console.table": "^0.10.0"
   },
   "devDependencies": {
